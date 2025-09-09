@@ -134,20 +134,20 @@ setTimeout((function() {
                                     BUTTER
                                 </div>`;
                             window.softLanding.play();
-                        } else if (Number(window.vertSpeed) >= -150 && Number(window.vertSpeed) < -50) {
+                        } else if (Number(window.vertSpeed) >= -200 && Number(window.vertSpeed) < -50) {
                             qualityClass = 'landing-quality';
                             window.statsDiv.innerHTML += `
                                 <div class="${qualityClass}" style="background-color: green; color: white;">
                                     GREAT
                                 </div>`;
                             window.softLanding.play();
-                        } else if (Number(window.vertSpeed) >= -240 && Number(window.vertSpeed) < -150) {
+                        } else if (Number(window.vertSpeed) >= -400 && Number(window.vertSpeed) < -200) {
                             window.hardLanding.play();
                             window.statsDiv.innerHTML += `
                                 <div class="${qualityClass}" style="background-color: yellow; color: black;">
                                     ACCEPTABLE
                                 </div>`;
-                        } else if (Number(window.vertSpeed) >= -750 && Number(window.vertSpeed) < -240) {
+                        } else if (Number(window.vertSpeed) >= -750 && Number(window.vertSpeed) < -400) {
                             window.hardLanding.play();
                             window.statsDiv.innerHTML += `
                                 <div class="${qualityClass}" style="background-color: red; color: white;">
