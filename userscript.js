@@ -129,27 +129,25 @@ setTimeout((function() {
                         let qualityText = '';
                         if (Number(window.vertSpeed) >= -50) {
                             qualityClass = 'landing-quality';
-                            qualityText = 'BUTTER';
                             window.statsDiv.innerHTML += `
                                 <div class="${qualityClass}" style="background-color: green; color: white;">
-                                    ${qualityText}
+                                    BUTTER
                                 </div>`;
                             window.softLanding.play();
-                        } else if (Number(window.vertSpeed) >= -200) {
+                        } else if (Number(window.vertSpeed) >= -150 && Number(window.vertSpeed) < -50) {
                             qualityClass = 'landing-quality';
-                            qualityText = 'GREAT';
                             window.statsDiv.innerHTML += `
                                 <div class="${qualityClass}" style="background-color: green; color: white;">
-                                    ${qualityText}
+                                    GREAT
                                 </div>`;
                             window.softLanding.play();
-                        } else if (Number(window.vertSpeed) >= -500 && Number(window.vertSpeed) < -200) {
+                        } else if (Number(window.vertSpeed) >= -240 && Number(window.vertSpeed) < -150) {
                             window.hardLanding.play();
                             window.statsDiv.innerHTML += `
                                 <div class="${qualityClass}" style="background-color: yellow; color: black;">
                                     ACCEPTABLE
                                 </div>`;
-                        } else if (Number(window.vertSpeed) >= -1000 && Number(window.vertSpeed) < -500) {
+                        } else if (Number(window.vertSpeed) >= -750 && Number(window.vertSpeed) < -240) {
                             window.hardLanding.play();
                             window.statsDiv.innerHTML += `
                                 <div class="${qualityClass}" style="background-color: red; color: white;">
@@ -157,11 +155,11 @@ setTimeout((function() {
                                 </div>`;
                         }
                     }
-                    if (Number(window.vertSpeed) <= -1000 || Number(window.vertSpeed > 200)) {
+                    if (Number(window.vertSpeed) < -750 || Number(window.vertSpeed > 200)) {
                         window.crashLanding.play();
                         window.statsDiv.innerHTML += `
                             <div class="landing-quality" style="background-color: crimson; color: white;">
-                                CRASH
+                                WASTED
                             </div>`;
                     }
                 } else if (window.justLanded && window.statsOpen) {
